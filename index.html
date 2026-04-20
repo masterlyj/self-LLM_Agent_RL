@@ -1,21 +1,66 @@
+      
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>LLM Agent RL 展示页面</title>
-    <style>
-        body{font-family:system-ui;background:#f5f7fa;margin:0;padding:40px;text-align:center}
-        .box{max-width:800px;margin:0 auto;background:white;padding:30px;border-radius:12px;box-shadow:0 2px 12px #0001}
-        h1{color:#2d3748}
-        p{color:#4a5568;font-size:16px;line-height:1.8}
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>小红书群聊 - 消息摘要Demo</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background: #f7f7f7; max-width: 420px; margin: 0 auto; color: #333; }
+    .header { background: #fff; padding: 16px; text-align: center; font-weight: 600; font-size: 17px; border-bottom: 1px solid #eee; }
+    .chat-box { padding: 12px; height: 70vh; overflow-y: auto; background: #fdfdfd; }
+    .message { margin-bottom: 12px; max-width: 75%; line-height: 1.5; }
+    .mine { margin-left: auto; background: #e1f0ff; border-radius: 16px 16px 4px 16px; padding: 10px 14px; }
+    .other { background: #fff; border: 1px solid #eee; border-radius: 16px 16px 16px 4px; padding: 10px 14px; }
+    .summary-card { background: #fff5f8; border: 1px solid #ffd1e0; border-radius: 12px; padding: 12px; margin: 10px 0; }
+    .summary-title { font-size: 15px; font-weight: 600; color: #ff2442; margin-bottom: 6px; }
+    .topic-tabs { display: flex; gap: 8px; padding: 8px 12px; background: #fff; border-top: 1px solid #eee; overflow-x: auto; }
+    .topic-tab { padding: 6px 12px; border-radius: 20px; font-size: 13px; white-space: nowrap; }
+    .topic-active { background: #ff2442; color: #fff; }
+    .topic-normal { background: #f2f2f2; color: #666; }
+    .key-item { margin: 4px 0; font-size: 14px; }
+    .at-me { color: #ff2442; font-weight: 500; }
+    .input-bar { display: flex; padding: 10px; background: #fff; border-top: 1px solid #eee; position: fixed; bottom: 0; width: 100%; max-width: 420px; }
+    .input-bar input { flex: 1; border: 1px solid #eee; border-radius: 20px; padding: 10px 16px; outline: none; }
+    .btn { background: #ff2442; color: #fff; border: none; border-radius: 20px; padding: 0 16px; margin-left: 8px; }
+  </style>
 </head>
 <body>
-    <div class="box">
-        <h1>Self LLM Agent RL 演示页面</h1>
-        <p>GitHub Pages 公开网页部署成功 ✅</p>
-        <p>作者：masterlyj（罗亚骏）</p>
-        <p>项目：LLM Agent 强化学习记忆系统</p>
+  <div class="header">上海周末爬山搭子群</div>
+
+  <div class="topic-tabs">
+    <div class="topic-tab topic-active">全部消息</div>
+    <div class="topic-tab topic-normal">行程安排</div>
+    <div class="topic-tab topic-normal">集合地点</div>
+    <div class="topic-tab topic-normal">装备建议</div>
+    <div class="topic-tab topic-normal">@我的消息</div>
+  </div>
+
+  <div class="chat-box">
+    <div class="summary-card">
+      <div class="summary-title">📝 未读消息智能摘要</div>
+      <div class="key-item">• <span class="at-me">@你</span>：小A确认参加本周六天马山爬山</div>
+      <div class="key-item">• 集合时间：周六 08:30</div>
+      <div class="key-item">• 集合地点：9号线松江大学城站3号口</div>
+      <div class="key-item">• 重要链接：活动攻略 https://example.com</div>
+      <div class="key-item">• 结论：共6人参加，轻装出行</div>
     </div>
+
+    <div class="message other">大家周六爬山有人去吗？</div>
+    <div class="message other">集合时间定在早上8点半可以不</div>
+    <div class="message other">@杜灿 你这边能来吗？</div>
+    <div class="message mine">可以的，我参加～</div>
+    <div class="message other">地点在9号线松江大学城3号口</div>
+    <div class="message other">我发个攻略链接哈 https://example.com</div>
+    <div class="message other">记得穿舒服的鞋子就行</div>
+  </div>
+
+  <div class="input-bar">
+    <input placeholder="输入消息..." />
+    <button class="btn">发送</button>
+  </div>
 </body>
 </html>
+
+    
